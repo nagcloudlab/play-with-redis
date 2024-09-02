@@ -5,7 +5,7 @@ from redis.sentinel import Sentinel
 
 # Determine startup nodes based on command-line arguments
 if len(sys.argv) != 3:
-    sentinel_hosts = [("127.0.0.1", 26379)]
+    sentinel_hosts = [("127.0.0.1", 26379),("127.0.0.1", 26380)]
 else:
     sentinel_hosts = [(sys.argv[1], int(sys.argv[2]))]
 
@@ -31,13 +31,13 @@ while last is None:
 # Write to master and read from replica
 for x in range(int(last) + 1, 1000001):  # Adjust the range for demonstration purposes
     try:
-        master.set(f"foo{x}", x)
+        master.set(f"foo{x}", x) # write
         print(f"Master set: foo{x} = {x}")
 
         # Allow some time for the replica to replicate the data
         time.sleep(0.1)
 
-        replica_value = replica.get(f"foo{x}")
+        replica_value = replica.get(f"foo{x}") # read
         print(f"Replica read: foo{x} = {replica_value}")
 
         master.set("__last__", x)

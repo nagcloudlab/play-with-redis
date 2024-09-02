@@ -4,7 +4,7 @@
 sudo apt-get install redis-server
 ```
 
-stop redis server
+stop redis server if it is running as a service
 
 ```bash
 sudo systemctl redis-server stop
