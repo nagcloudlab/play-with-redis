@@ -8,6 +8,7 @@ if len(sys.argv) != 3:
         {"host": "127.0.0.1", "port": 7000},
         {"host": "127.0.0.1", "port": 7001},
         {"host": "127.0.0.1", "port": 7002},
+        {"host": "127.0.0.1", "port": 7003},
     ]
 else:
     startup_nodes = [

@@ -5,12 +5,9 @@ import redis
 # Determine startup nodes based on command-line arguments
 master_host = "127.0.0.1"
 master_port = 6379
-# replica_host = "127.0.0.1"
-# replica_port = 7001
 
 # Connect to the master and replica Redis instances
 master = redis.StrictRedis(host=master_host, port=master_port, decode_responses=True)
-# replica = redis.StrictRedis(host=replica_host, port=replica_port, decode_responses=True)
 
 # Initialize the last key value
 last = None

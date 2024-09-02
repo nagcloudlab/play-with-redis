@@ -2,7 +2,7 @@
 
 import sys
 import time
-import redis
+import redis  
 
 # Determine startup nodes based on command-line arguments
 master_host = "127.0.0.1"
