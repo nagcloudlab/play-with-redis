@@ -7,7 +7,7 @@ sudo apt-get install redis-server
 stop redis server
 
 ```bash
-sudo service redis-server stop
+sudo systemctl redis-server stop
 ```
 
 start redis server with configuration file in foreground
